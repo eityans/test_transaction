@@ -1,0 +1,18 @@
+<h1>Tickets</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Code</th>
+    <th>Created at</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @tickets.each do |ticket| %>
+    <tr>
+      <td><%= ticket.code %></td>
+      <td><%= ticket.created_at %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

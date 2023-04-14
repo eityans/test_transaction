@@ -1,0 +1,7 @@
+<h1>Create tickets</h1>
+
+<%= form_tag('/create_tickets', method: :post) do %>
+  <%= label_tag(:codes, 'Ticket codes (comma separated)') %>
+  <%= text_field_tag(:codes) %>
+  <%= submit_tag 'Create' %>
+<% end %>
