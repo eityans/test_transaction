@@ -7,7 +7,7 @@ class TicketsController < ApplicationController
   end
 
   def create_tickets
-    TicketsCreationService.create_tickets!(params[:codes].split(','))
+    ImportTicketsService.create_tickets!(params[:codes].split(','))
     redirect_to tickets_path
   end
 end
