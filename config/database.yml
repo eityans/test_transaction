@@ -1,19 +1,31 @@
 
+#default: &default
+#  adapter: postgresql
+#  encoding: unicode
+#  pool: <%#= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#  database: test_transaction
+#  username: test
+#  password: test
+#  host: localhost
+#  port: 5432
+
 default: &default
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql2
+  encoding: utf8mb4
+  collation: utf8mb4_general_ci
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  database: test_transaction
   username: test
   password: test
   host: localhost
-  port: 5432
 
 development:
   <<: *default
+  database: test_transaction_development
 
 test:
   <<: *default
+  database: test_test
 
 production:
   <<: *default
+  database: test_production
